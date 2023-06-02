@@ -187,11 +187,11 @@ Begin DesktopWindow Window1
       Visible         =   True
       Width           =   100
    End
-   Begin DesktopButton Button1
+   Begin DesktopButton StartButton
       AllowAutoDeactivate=   True
       Bold            =   False
       Cancel          =   False
-      Caption         =   "OK"
+      Caption         =   "Start"
       Default         =   True
       Enabled         =   True
       FontName        =   "System"
@@ -403,10 +403,18 @@ End
 
 #tag EndWindowCode
 
-#tag Events Button1
+#tag Events StartButton
 	#tag Event
 		Sub Pressed()
-		  Thread1.Start
+		  If Me.Caption = "Start" then
+		    Me.Caption = "Stop"
+		    Thread1.Start
+		  else
+		    Thread1.Stop
+		    Timer1.Mode = Timer.ModeOff  
+		    Me.Caption = "Start"
+		  end
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
