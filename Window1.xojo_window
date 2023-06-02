@@ -47,7 +47,7 @@ Begin DesktopWindow Window1
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Mode            =   7
+      Mode            =   6
       Scope           =   0
       TabIndex        =   0
       TabPanelIndex   =   0
