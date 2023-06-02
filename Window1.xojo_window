@@ -31,6 +31,7 @@ Begin DesktopWindow Window1
       AllowTabs       =   False
       BackgroundColor =   &cFFFFFF
       Bold            =   False
+      DoubleBuffer    =   False
       Enabled         =   True
       FontName        =   "System"
       FontSize        =   11.0
@@ -219,12 +220,15 @@ Begin DesktopWindow Window1
       Width           =   80
    End
    Begin Thread Thread1
+      DebugIdentifier =   ""
       Index           =   -2147483648
       LockedInPosition=   False
       Priority        =   5
       Scope           =   0
       StackSize       =   0
       TabPanelIndex   =   0
+      ThreadID        =   0
+      ThreadState     =   0
    End
    Begin Timer Timer1
       Enabled         =   True
@@ -375,8 +379,8 @@ End
 		  lastY= lastY + Sin(rad)
 		  var p1 as ChartScatterDatapoint = new ChartScatterDatapoint(window1.lastX,window1.lastY,1.0)
 		  Window1.DataSet.AddDatapoint(p1)
-		  Window1.DataSet.Fill = True
-		  Window1.DataSet.Transparency = 1.0
+		  Window1.DataSet.Fill = False
+		  //Window1.DataSet.Transparency = 1.0
 		  StepsTaken = StepsTaken +1
 		  Window1.Chart1.AddDataset(DataSet)
 		  Window1.Chart1.refresh
